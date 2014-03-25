@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 import xml.etree.ElementTree as et
 import urllib as u
-import zipfile as z
+import zipfile
 import os.path, sys, os, shutil, time
 from PyQt4 import QtCore, QtGui, uic
 
@@ -43,6 +44,11 @@ def seconddl():
         else:
             print 'Downloading show with ID %s' % showid
             u.urlretrieve('http://thetvdb.com/api/%s/series/%s/all/en.zip' % (key, showid), 'xml/additional/%s.zip' % showid)
+            #Extract downloaded zip to its own directory
+            extract('xml/additional/%s.zip' % showid, 'xml/additional/%s' % showid)
+    #Delete zip files
+    print 'Cleaning up temporary files'
+    cleanup('.zip', 'xml/additional')
     print 'Finished downloading additional metadata.'
 
 def get_id(target):
@@ -51,6 +57,18 @@ def get_id(target):
     root = tree.getroot()
     showid = root[0][0].text
     return showid
+
+def extract(target, destination):
+    #Extracts contents to its own directory
+    with zipfile.ZipFile(target, 'r') as z:
+        z.extractall(destination)
+        z.close()
+
+def cleanup(filetype, directory):
+    #Cleans a directory of files of a given file type
+    for _file in os.listdir(directory):
+        if _file.lower().endswith(filetype):
+            os.remove('%s/%s' % (directory, _file))
 
 firstdl()
 seconddl()
