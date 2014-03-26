@@ -4,8 +4,6 @@ import urllib as u
 import zipfile
 import os.path, sys, os, shutil, time
 
-t1 = time.clock()
-
 key = '3E7E5A05D3C6236A'
 
 def firstdl():
@@ -73,10 +71,3 @@ def getfilesize(url):
     f = u.open(url)
     size = f.info()['Content-Length']
     return size
-
-firstdl()
-seconddl()
-
-t2 = time.clock()
-total = t2 - t1
-print 'Time taken: ' + str(total)
