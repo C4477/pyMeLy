@@ -1,8 +1,5 @@
 #!/usr/bin/env python
-import xml.etree.ElementTree as et
-import urllib as u
-import zipfile
-import os.path, sys, os, shutil, time
+import xml.etree.ElementTree as et, zipfile, urllib as u, os.path, sys, os, shutil, time
 
 key = '3E7E5A05D3C6236A'
 
