@@ -3,7 +3,6 @@ import xml.etree.ElementTree as et
 import urllib as u
 import zipfile
 import os.path, sys, os, shutil, time
-from PyQt4 import QtCore, QtGui, uic
 
 t1 = time.clock()
 
