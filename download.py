@@ -70,6 +70,11 @@ def cleanup(filetype, directory):
         if _file.lower().endswith(filetype):
             os.remove('%s/%s' % (directory, _file))
 
+def getfilesize(url)P:
+    f = u.open(url)
+    size = f.info()['Content-Length']
+    return size
+
 firstdl()
 seconddl()
 
