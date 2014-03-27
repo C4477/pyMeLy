@@ -1,0 +1,6 @@
+#Imported python files get compiled at runtime, no need to upload
+*.pyc
+
+#Metadata downloads don't need to be uploaded
+xml/initial/*
+xml/additional/*
