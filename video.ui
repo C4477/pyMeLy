@@ -47,7 +47,7 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="ppButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -60,7 +60,7 @@
      <string>Play/Pause</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="fButton">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -73,7 +73,7 @@
      <string>Full Screen</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="labelControl">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -99,7 +99,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="labelBuffer">
     <property name="geometry">
      <rect>
       <x>620</x>
