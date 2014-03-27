@@ -3,16 +3,15 @@ import xml.etree.ElementTree as et, zipfile, urllib as u, os.path, sys, os, shut
 
 key = '3E7E5A05D3C6236A'
 
-def firstdl():
+def firstdl(xml):
     #Initial downloading of metadata, to find show ID.
-    initial_xml = 'xml/shows.xml'
     #Create folder for initial metadata if it does not already exist
     if not os.path.isdir('xml/initial'):
         print 'Creating folder xml/initial/'
         os.mkdir('xml/initial')
     #Parse XML file containing show list
     print 'Parsing initial XML file.'
-    tree = et.parse(initial_xml)
+    tree = et.parse(xml)
     root = tree.getroot()
     #Read XML file, download metadata matching each TV show listed
     for child in root:
